@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMatrix | Enterprise AI Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a855f7; --secondary: #3b82f6; --accent: #06b6d4;
+            --bg: #0f172a; --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #f1f5f9; --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
+        
+        /* --- NAV --- */
+        nav { 
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 10%; 
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(15px); z-index: 1000;
+            border-bottom: var(--glass-border);
+        }
+        .logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-box { width: 35px; height: 35px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .logo-text { font-size: 1.6rem; font-weight: 800; background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- HERO --- */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 10%; background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.1), transparent); }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+        .hero span { background: linear-gradient(to right, var(--accent), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- PRICING --- */
+        .section { padding: 100px 10%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: var(--card-bg); padding: 3rem 2rem; border-radius: 24px; border: var(--glass-border); transition: 0.4s; text-align: center; }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .price { font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+        .price small { font-size: 1rem; color: #94a3b8; }
+
+        /* --- CONTACT --- */
+        .contact-box { background: rgba(255,255,255,0.02); padding: 4rem; border-radius: 32px; border: var(--glass-border); display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; }
+        input, textarea, select { width: 100%; padding: 1rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border: var(--glass-border); border-radius: 12px; color: white; }
+        .btn-cta { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 1rem 2rem; border-radius: 50px; font-weight: 700; color: white; border: none; cursor: pointer; width: 100%; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo-group">
+        <div class="logo-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+        <span class="logo-text">AutoMatrix</span>
+    </a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Scale with <span>AI Autonomy</span></h1>
+        <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 2rem;">We build the digital nervous system for modern enterprises.</p>
+        <a href="#contact" class="btn-cta" style="width: auto;">Initialize Audit</a>
+    </div>
+</section>
+
+<section class="section" id="pricing">
+    <div class="grid">
+        <div class="card">
+            <h3>Starter Pulse</h3>
+            <div class="price">500 <small>EGP/mo</small></div>
+            <p style="color: #94a3b8; margin-bottom: 2rem;">Essential automation for startups.</p>
+            <a href="#contact" class="btn-cta">Select Plan</a>
+        </div>
+        <div class="card" style="border-color: var(--primary);">
+            <h3>Professional</h3>
+            <div class="price">2500 <small>EGP/mo</small></div>
+            <p style="color: #94a3b8; margin-bottom: 2rem;">Full-scale agency integration.</p>
+            <a href="#contact" class="btn-cta">Select Plan</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="contact-box">
+        <div>
+            <h2>Start Your <br><span style="color: var(--accent);">Digital Evolution</span></h2>
+            <p style="margin-top: 1rem; color: #94a3b8;">Our team will review your data and respond within 24 hours.</p>
+        </div>
+        <form id="leadForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <select id="plan" required>
+                <option value="" disabled selected>Select an Interest Plan</option>
+                <option value="Starter (500 EGP)">Starter Pulse (500 EGP)</option>
+                <option value="Professional (2500 EGP)">Professional (2500 EGP)</option>
+                <option value="Enterprise (Custom)">Enterprise (Custom)</option>
+            </select>
+            <textarea id="message" rows="4" placeholder="Briefly describe your project..." required></textarea>
+            <button type="submit" class="btn-cta">Submit to Command Center</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const lead = {
+            id: Date.now(),
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            plan: document.getElementById('plan').value,
+            message: document.getElementById('message').value,
+            date: new Date().toLocaleString()
+        };
+        let leads = JSON.parse(localStorage.getItem('automixLeads')) || [];
+        leads.push(lead);
+        localStorage.setItem('automixLeads', JSON.stringify(leads));
+        alert("Signal Transmitted Successfully.");
+        this.reset();
+    });
+</script>
+</body>
+</html>
